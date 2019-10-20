@@ -1,81 +1,37 @@
 <!DOCTYPE html>
 <html>
-<style>
-        .splitRight{
-            height: 100%;
-            width: 35%;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            overflow-x: hidden;
-            padding-top: 20px;
-            right: 0;
-            background-color: rgb(255, 253, 253);
-        }
-        
-        .splitLeft {
-            height: 100%;
-            width: 65%;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            overflow-x: hidden;
-            padding-top: 20px;
-            left: 0;
-            background-color: rgb(103, 201, 58);
-        }
-        .centered {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-        .titulo{
-            position: absolute;
-            font-size: 30pt;
-            top :25%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-        }
-        .centered img {
-            width: 150px;
-            border-radius: 50%;
-        }
-        .boton{
-            font-family: "Bookman";
-            font-size: 12pt;   
-            position: absolute;
-            top: 50%;
-            border-radius: 8px;
-            width: 100px;
-            height: 40px;
-            
-        }
-        .boton:hover{
-            background-color: rgb(103, 201, 58);
-            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-        }
-        </style>
 <head>
-<title>Login</title>
+<title>Proyecto Nutrición</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/reset.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+
+    <link rel="icon" href="imgs/pig.png">
+
+    <script src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
     <div class = "splitLeft">
 
     </div>
     <div class = "splitRight">
-        <section>
-                <h1 class = "titulo">Nutrición</h1>
-                
-                <button class = "boton" style=" left:25%">
+        <section id="user-menu">
+                <h1 class = "titulo">Nutrición</h1>                
+                <button class = "boton" style=" left:25%" id="paciente">
                     Paciente
                 </button>
-                <button class = "boton" style= "left: 55%">
+                <button class = "boton" style= "left: 55%" id="nutriologo">
                     Nutriologo
                 </button>
         </section>
+
+        <section id="formulario-paciente"></section>
+        <section id="formulario-nutriologo"></section>
     </div>
     
 </body>

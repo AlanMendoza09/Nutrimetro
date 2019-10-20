@@ -1,0 +1,60 @@
+
+.splitRight{
+    height: 100%;
+    width: 35%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    right: 0;
+    background-color: rgb(255, 253, 253);
+}
+
+.splitLeft {
+    height: 100%;
+    width: 65%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+    left: 0;
+    background-color: rgb(103, 201, 58);
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-ali    gn: center;
+}
+.titulo{
+    font-family: "Lato";
+    position: absolute;
+    font-size: 30pt;
+    top :25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.centered img {
+    width: 150px;
+    border-radius: 50%;
+}
+.boton{
+    font-family: "Lato";
+    font-size: 12pt;   
+    position: absolute;
+    top: 45%;
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+            
+}
+.boton:hover{
+    cursor: pointer;
+    background-color: rgb(103, 201, 58);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
