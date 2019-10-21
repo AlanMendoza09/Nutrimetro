@@ -24,6 +24,9 @@ CREATE table PersonaMayor(
     usuario varchar(100) not null,
     telefono int(12) not null,
     historiaClinica varbinary not null,
+    id_planNutricional int(10) not NULL,
+    FOREIGN key(id_planNutricional) REFERENCES PlanNutricional(id)
+
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE table RegistroMedico(
@@ -55,6 +58,7 @@ CREATE table Nutriologo(
 )ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 CREATE TABLE PlanNutricional(
+
     id INT(10) PRIMARY KEY NOT NULL auto_increment,
     especificaciones VARCHAR(100) not NULL,
     recomendaciones VARCHAR(100) not NULL,
@@ -72,13 +76,12 @@ CREATE TABLE PlanNutricional(
 
     
 )
-
 CREATE TABLE Comida(
     id int(10) primary key not null auto_increment,
     entrada VARCHAR(100) NOT NULL,
     platoFuerto VARCHAR(100) NOT NULL,
     postre VARCHAR(100) Not NULL,
-    bebida varchar(100),
+    bebida varchar(100)
 )
 
 CREATE TABLE Seguimiento(
@@ -92,4 +95,52 @@ CREATE TABLE Seguimiento(
     proteina DOUBLE DEFAULT 0,
     semillas DOUBLE DEFAULT 0,
     grasas DOUBLE DEFAULT 0,
+)
+
+--Tablas de relaciones de uno a muchos  y muchos a muchos
+
+CREATE TABLE Nutriologo_PersonaMayor(
+    id_nutriologo int (10) not NULL,
+    id_personaMayor int (10) not NULL,
+    foreign key(id_personaMayor) REFERENCES PersonaMayor(id),
+    FOREIGN KEY(id_nutriologo) REFERENCES Nutriologo(id)
+)
+CREATE TABLE Nutriologo_Comentario(
+    id_nutriologo int (10) not NULL,
+    id_comentario int (10) NOT NULL,
+    FOREIGN KEY(id_comentario) REFERENCES Comentario(id),
+    FOREIGN KEY(id_nutriologo) REFERENCES Nutriologo(id)
+)
+CREATE TABLE PersonaMayor_Comentario(
+    id_personaMayor int (10) not NULL,
+    id_comentario int (10) NOT NULL,
+    FOREIGN KEY(id_comentario) REFERENCES Comentario(id),
+    Fforeign key(id_personaMayor) REFERENCES PersonaMayor(id)
+)
+CREATE TABLE Nutriologo_PlanNutricional(
+    id_nutriologo int (10) not NULL,
+    id_planNutricional int (10) NOT NULL,
+    FOREIGN KEY(id_planNutricional) REFERENCES PlanNutricional(id),
+    FOREIGN KEY(id_nutriologo) REFERENCES Nutriologo(id)
+    
+)
+CREATE TABLE PersonaMayor_Seguimiento(
+    id_personaMayor int (10) not NULL,
+    id_seguimiento int (10) NOT NULL,
+    FOREIGN KEY(id_seguimiento) REFERENCES Seguimiento(id),
+    Fforeign key(id_personaMayor) REFERENCES PersonaMayor(id)
+)
+CREATE TABLE PersonaMayor_RegistroMedico(
+    id_personaMayor int (10) not NULL,
+    id_registroMedico int (10) NOT NULL,
+    FOREIGN KEY(id_registroMedico) REFERENCES RegistroMedico(id),
+    Fforeign key(id_personaMayor) REFERENCES PersonaMayor(id)
+)
+
+CREATE TABLE Comida_PlanNutricional(
+    id_comida int (10) not NULL,
+    id_planNutricional int (10) NOT NULL,
+    FOREIGN KEY(id_planNutricional) REFERENCES PlanNutricional(id),
+    FOREIGN KEY(id_nutriologo) REFERENCES Comida(id)
+    
 )
