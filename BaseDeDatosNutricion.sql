@@ -27,7 +27,7 @@ CREATE table PersonaMayor(
     id_planNutricional int(10) not NULL,
     FOREIGN key(id_planNutricional) REFERENCES PlanNutricional(id)
 
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)
 
 CREATE table RegistroMedico(
     id int(10) primary key not null auto_increment,
@@ -35,13 +35,13 @@ CREATE table RegistroMedico(
     fechaRegistro DATE not null,
     estatura double default 0,
     observaciones nvarchar(300) not null,
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)
 
 CREATE Table Comentarios(
     id int(10) primary key not null auto_increment,
     contenido nvarchar(300) not null,
     fecha DATE not null
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)
 
 CREATE table Nutriologo(
     id int(10) primary key not null auto_increment,
@@ -55,7 +55,7 @@ CREATE table Nutriologo(
     domicilioCons varchar(100) not null,
     domicilioPos varchar(100) not null
 
-)ENGINE=InnoDB DEFAULT CHARSET=latin1;
+)
 
 CREATE TABLE PlanNutricional(
 
@@ -144,3 +144,11 @@ CREATE TABLE Comida_PlanNutricional(
     FOREIGN KEY(id_nutriologo) REFERENCES Comida(id)
     
 )
+
+DROP USER 'nutricion'@'localhost';
+flush privileges;
+
+INSERT INTO Usuario (nombre,contraseña,usuario) VALUES ('administrador', 'admin1234', 'admin');
+
+CREATE USER 'nutricion'@'localhost' IDENTIFIED BY 'mipass';
+GRANT SELECT, UPDATE, INSERT, DELETE ON Nutricion.* TO 'nutricion'@'localhost';
