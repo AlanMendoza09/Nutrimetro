@@ -13,7 +13,7 @@
 
 .splitLeft {
     height: 100%;
-    width: 65%;
+    width: 100%;
     position: fixed;
     z-index: 1;
     top: 0;
@@ -21,6 +21,22 @@
     padding-top: 20px;
     left: 0;
     background-color: rgb(103, 201, 58);
+}
+
+#branding {
+    height:100%;
+    margin-right:500px;
+    margin-left:0px;
+    background-color:inherit;
+	background-repeat: round;
+    background-size:cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+}
+
+.illustration {
+    background-image: url("/img/landing-wallpaper.jpg");
 }
 
 .centered {
@@ -57,4 +73,12 @@
     cursor: pointer;
     background-color: rgb(103, 201, 58);
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.login-paciente {
+    display: none;
+}
+
+.login-nutri {
+    display: none;
 }
