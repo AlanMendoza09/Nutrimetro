@@ -9,6 +9,8 @@
     <link href="css/reset.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <!--Bootsrap 4 CDN-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
     <link rel="icon" href="imgs/pig.png">
@@ -21,8 +23,11 @@
             <div id="branding" class="illustration"></div>
         </div>
         <div class = "splitRight">
-            <section id="user-menu">
-                <h1 class = "titulo">Nutrimetro</h1>                
+            <div id="content">
+                <div id="header">
+                    <h1 class = "titulo">Nutrimetro</h1> 
+                </div>
+                <div id="loginArea"></div>              
                 <button class = "boton" style=" left:25%" id="paciente">
                     Paciente
                 </button>
@@ -31,6 +36,7 @@
                 </button>
                 <div class="login-paciente">
                     <form id="login">
+                        <div id="loginMessage" class="groupMargin"> Para iniciar la sesión ingresa tu usuario y contraseña</div>
                         Nombre de usuario: <input type="text">
                         Contraseña: <input type="text">
                         <a href="registroPaciente.html">¿No tiene una cuenta? Registrarse aquí</a> 
@@ -39,14 +45,16 @@
                     
                 <div class="login-nutri">
                     <form id="login">
+                        <p>Para iniciar la sesión ingresa tu usuario y contraseña</p>
                         Nombre de usuario: <input type="text">
                         Contraseña: <input type="text">
                         <a href="registroNutri.html">¿No tiene una cuenta? Registrarse aquí</a> 
                     </form>
                 </div>
-            </section>
-            <section id="formulario-paciente"></section>
-            <section id="formulario-nutriologo"></section>
+                <section id="formulario-paciente"></section>
+                <section id="formulario-nutriologo"></section>
+            </div>
+                
         </div>
     </div>
     
