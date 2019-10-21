@@ -5,27 +5,29 @@ CREATE DATABASE Nutricion;
 use Nutricion;
 
 --
--- Table structure for table `alumno`
+-- 
 --
 
 DROP TABLE IF EXISTS Nutricion;
 
 CREATE table PersonaMayor(
-    id int(10) primary key not null auto_increment,
+    id int primary key not null auto_increment,
     nombre varchar(100) not null,
     apellido varchar(100) not null,
     sexo char not null,
     email varchar(100) not null,
     edad int(3) default 0,
     fechaDeNacimiento DATE not null,
-    socioEconomico varchar(100) not null,
+    socioEconomico VARCHAR(100) not null,
     escolaridad varchar(100) not null,
     contraseña varchar(100) not null,
     usuario varchar(100) not null,
     telefono int(12) not null,
     historiaClinica varbinary not null,
     id_planNutricional int(10) not NULL,
+    id_historiaClinica int(10) NOT NULL 
     FOREIGN key(id_planNutricional) REFERENCES PlanNutricional(id)
+    FOREIGN key(id_historiaClinica) REFERENCES HistorialClinico(id)
 
 )
 
@@ -54,7 +56,6 @@ CREATE table Nutriologo(
     cedula varchar(100) not null,
     domicilioCons varchar(100) not null,
     domicilioPos varchar(100) not null
-
 )
 
 CREATE TABLE PlanNutricional(
@@ -97,6 +98,51 @@ CREATE TABLE Seguimiento(
     grasas DOUBLE DEFAULT 0,
 )
 
+CREATE TABLE HistorialClinico(
+    id int(10) primary key not null auto_increment,
+    fechaRegistro DATE NOT NULL,
+    diabetes Boolean DEFAULT FALSE,
+    hipertensión Boolean DEFAULT FALSE,
+    dislipidemias Boolean DEFAULT FALSE,
+    dislipidemiasString VARCHAR(100),
+    cancer Boolean DEFAULT FALSE,
+    cancerString VARCHAR(100),
+    sobrepeso Boolean DEFAULT FALSE,
+    otrosAntecedentes VARCHAR(100),
+    perdidasDentales Boolean DEFAULT FALSE,
+    tropieza Boolean DEFAULT FALSE,
+    ayudaComer Boolean DEFAULT FALSE,
+    ayudaBanioo Boolean DEFAULT FALSE,
+    ayudaVestirse Boolean DEFAULT FALSE,
+    moretones Boolean DEFAULT FALSE,
+    pielPalida Boolean DEFAULT FALSE,
+    nigricans Boolean DEFAULT FALSE,
+    uniasPelo Boolean DEFAULT FALSE,
+    edema Boolean DEFAULT FALSE,
+    astenia Boolean DEFAULT FALSE,
+    asteniaString VARCHAR(100),
+    jorobaDeBufalo Boolean DEFAULT FALSE,
+    cushing Boolean DEFAULT FALSE,
+    ectomorfoString VARCHAR(100),
+    vision Boolean DEFAULT FALSE,
+    visionString VARCHAR(100),
+    bocaLengua Boolean DEFAULT FALSE,
+    bocaLenguaString VARCHAR(100),
+    tonoMuscular VARCHAR(100),
+    hallazgos:String DEFAULT FALSE,
+    otrosString VARCHAR(100),
+    medicamentos VARCHAR(100),
+    tabaquismo Boolean DEFAULT FALSE,
+    tabaquismoString VARCHAR(100),
+    alcohol Boolean DEFAULT FALSE,
+    alcoholFrecuencia VARCHAR(100),
+    cafeina Boolean DEFAULT FALSE,
+    cafeinaFrecuencia VARCHAR(100),
+    drogas Boolean DEFAULT FALSE,
+    drogasFrecuencia VARCHAR(100),
+    inactividadSemana VARCHAR(100),
+    inactividadFinSemana VARCHAR(100)
+)
 --Tablas de relaciones de uno a muchos  y muchos a muchos
 
 CREATE TABLE Nutriologo_PersonaMayor(
