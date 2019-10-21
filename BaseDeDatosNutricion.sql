@@ -11,8 +11,8 @@ use Nutricion;
 DROP TABLE IF EXISTS Nutricion;
 
 CREATE table PersonaMayor(
-    id int primary key not null auto_increment,
-    nombre varchar(100) not null,
+    id int(10) primary key not null auto_increment,
+    nombre VARCHAR(100) not null,
     apellido varchar(100) not null,
     sexo char not null,
     email varchar(100) not null,
