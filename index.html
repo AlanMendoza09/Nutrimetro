@@ -35,7 +35,7 @@
                     Nutriologo
                 </button>
                 <div class="login-paciente">
-                        <div id="loginMessage" class="groupMargin"> Para iniciar la sesión ingresa tu usuario y contraseña</div>
+                        <div id="loginMessage" class="groupMargin"> <p>Para iniciar la sesión ingresa tu usuario y contraseña</p></div>
                         Nombre de usuario: <input type="text">
                         Contraseña: <input type="text">
                         <a href="registroPaciente.html">¿No tiene una cuenta? Registrarse aquí</a> 
@@ -58,4 +58,17 @@
     
     
 </body>
+
+<script>
+    $( "#paciente" ).click(function() {
+    $('.login-paciente').css('display','inherit');
+    $('.login-nutri').css('display','none');
+});
+
+    $( "#nutriologo" ).click(function() {
+    $('.login-nutri').css('display','inherit');
+    $('.login-paciente').css('display','none');
+});
+
+</script>
 </html>

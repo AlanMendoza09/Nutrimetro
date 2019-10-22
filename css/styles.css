@@ -40,7 +40,7 @@
 }
 
 .illustration {
-    background-image: url("/img/landing-wallpaper.jpg");
+    background-image: url("../img/landing-wallpaper.jpg");
 }
 
 .centered {
@@ -84,6 +84,9 @@
     height: auto !important;
     margin: 0 auto -55px auto;
     padding: 0px 150px 0px 50px;
+
+    word-wrap: break-word;
+    width: 350px;
 }
 
 .groupMargin {
@@ -91,10 +94,19 @@
     text-align: center;
 }
 
+#loginMessage {
+    width: 350px;;
+}
+
 .login-paciente {
-    /*display: none;*/
+    display: none;
+    transform: translate(10px, 412px);
+    width: fit-content;
 }
 
 .login-nutri {
     display: none;
+    /*display: none;*/
+    transform: translate(10px, 412px);
+    width: fit-content;
 }
